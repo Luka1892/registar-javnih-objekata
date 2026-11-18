@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registar javnih objekata</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238aa4ff'/%3E%3Cpath d='M9 24V13l7-5 7 5v11h-5v-6h-4v6z' fill='%230d0d12'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="./assets/index-BLNBFpFG.js"></script>
+  <script type="module" crossorigin src="./assets/index-2PbkoItz.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-B0fFmPBj.js">
   <link rel="modulepreload" crossorigin href="./assets/three.core-Do4_z4-Y.js">
   <link rel="modulepreload" crossorigin href="./assets/three.module-EE6m1Gdo.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-wzkuIBMH.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-BANQlrKv.css">
 </head>
 <body>
   <div id="app" data-view="home">
@@ -66,10 +66,10 @@
       <div class="filters glass" id="legend" role="group" aria-label="Filter po stanju"></div>
       <div id="tip" class="tip" hidden></div>
       <div class="toolbar glass" role="toolbar" aria-label="Alati prikaza">
-        <button class="tool" id="fit" title="Prikaži cijeli model"><span data-ic="maximize"></span>Cijeli model</button>
-        <button class="tool on" id="toggleStatus" aria-pressed="true" title="Boje prema stanju održavanja"><span data-ic="palette"></span>Stanje</button>
+        <button class="tool" id="fit" title="Prikaži cijeli model"><span data-ic="maximize"></span><span class="tl">Cijeli model</span></button>
+        <button class="tool on" id="toggleStatus" aria-pressed="true" title="Boje prema stanju održavanja"><span data-ic="palette"></span><span class="tl">Stanje</span></button>
         <span class="tool-sep"></span>
-        <button class="tool" id="exportCsv" title="Plan održavanja za Excel"><span data-ic="download"></span>Izvoz plana</button>
+        <button class="tool" id="exportCsv" title="Plan održavanja za Excel"><span data-ic="download"></span><span class="tl">Izvoz plana</span></button>
       </div>
       <div id="loading" class="loading glass">
         <div class="spinner"></div>
@@ -78,6 +78,7 @@
     </main>
 
     <aside id="panel" class="panel obj-view">
+      <div class="sheet-handle" id="sheetHandle"><span class="grip"></span><div id="peek" class="peek"></div></div>
       <nav class="tabs" role="tablist">
         <button class="tab on" data-tab="overview" role="tab" aria-selected="true">Pregled</button>
         <button class="tab" data-tab="element" role="tab" aria-selected="false">Element</button>
