@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="sr-ME">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registar javnih objekata</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238aa4ff'/%3E%3Cpath d='M9 24V13l7-5 7 5v11h-5v-6h-4v6z' fill='%230d0d12'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/index-BLNBFpFG.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-B0fFmPBj.js">
+  <link rel="modulepreload" crossorigin href="./assets/three.core-Do4_z4-Y.js">
+  <link rel="modulepreload" crossorigin href="./assets/three.module-EE6m1Gdo.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-wzkuIBMH.css">
+</head>
+<body>
+  <div id="app" data-view="home">
+    <header class="titlebar">
+      <button id="navHome" class="back"><span data-ic="arrow"></span>Svi objekti</button>
+      <span class="crumb-sep">/</span>
+      <div class="switcher">
+          <button id="objBtn" class="obj-btn" aria-haspopup="listbox" aria-expanded="false">
+            <span id="bname">Osnovna škola</span>
+            <span class="chev" data-ic="chevron"></span>
+          </button>
+          <div id="objMenu" class="menu" role="listbox" hidden>
+            <div id="objMenuList"></div>
+            <div class="menu-sep"></div>
+            <label class="menu-item">
+              <input type="file" id="ifcfile" accept=".ifc,.frag" hidden />
+              <span data-ic="upload"></span>
+              <span><b>Učitaj model sa diska…</b><small>IFC ili .frag iz Revita / ArchiCAD-a</small></span>
+            </label>
+          </div>
+        </div>
+      <div class="titlebar-right">
+        <span class="tag">Demo podaci</span>
+        <span id="today" class="muted"></span>
+      </div>
+    </header>
+
+    <section id="home" class="home"></section>
+
+    <aside class="sidebar obj-view">
+      <section>
+        <div id="thumb" class="thumb"></div>
+        <div id="objInfo" class="obj-info"></div>
+      </section>
+      <section class="grow">
+        <h3>Spratovi</h3>
+        <div id="levelList" class="level-list"></div>
+      </section>
+      <section>
+        <h3>Prikaz sprata</h3>
+        <div class="seg" role="group" aria-label="Način prikaza sprata">
+          <button class="seg-btn on" data-mode="cut" aria-pressed="true">Presjek</button>
+          <button class="seg-btn" data-mode="ghost" aria-pressed="false">Providno</button>
+        </div>
+        <div id="cutWrap" class="cut">
+          <div class="row"><label for="cutH" class="muted">Visina reza</label><output id="cutLbl">1.2 m</output></div>
+          <input type="range" id="cutH" min="0.3" max="4" step="0.1" value="1.2" />
+        </div>
+      </section>
+    </aside>
+
+    <main id="viewer" class="obj-view">
+      <div id="container"></div>
+      <div class="filters glass" id="legend" role="group" aria-label="Filter po stanju"></div>
+      <div id="tip" class="tip" hidden></div>
+      <div class="toolbar glass" role="toolbar" aria-label="Alati prikaza">
+        <button class="tool" id="fit" title="Prikaži cijeli model"><span data-ic="maximize"></span>Cijeli model</button>
+        <button class="tool on" id="toggleStatus" aria-pressed="true" title="Boje prema stanju održavanja"><span data-ic="palette"></span>Stanje</button>
+        <span class="tool-sep"></span>
+        <button class="tool" id="exportCsv" title="Plan održavanja za Excel"><span data-ic="download"></span>Izvoz plana</button>
+      </div>
+      <div id="loading" class="loading glass">
+        <div class="spinner"></div>
+        <div><b id="loadTitle">Učitavam model</b><small id="loadSub">Priprema geometrije…</small></div>
+      </div>
+    </main>
+
+    <aside id="panel" class="panel obj-view">
+      <nav class="tabs" role="tablist">
+        <button class="tab on" data-tab="overview" role="tab" aria-selected="true">Pregled</button>
+        <button class="tab" data-tab="element" role="tab" aria-selected="false">Element</button>
+        <button class="tab" data-tab="orders" role="tab" aria-selected="false">Nalozi <span id="openCount" class="count">0</span></button>
+      </nav>
+      <div class="tab-body" data-body="overview" id="overview"></div>
+      <div class="tab-body" data-body="element" id="selected" hidden></div>
+      <div class="tab-body" data-body="orders" id="orders" hidden></div>
+    </aside>
+  </div>
+</body>
+</html>

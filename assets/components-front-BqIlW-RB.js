@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-B0fFmPBj.js";e((()=>{throw Error(`Could not resolve "potree-core" imported by "@thatopen/components-front". Is it installed?`)}))();
